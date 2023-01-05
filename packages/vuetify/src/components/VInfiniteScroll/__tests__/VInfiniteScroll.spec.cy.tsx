@@ -4,8 +4,7 @@ import { createRange } from '@/util'
 import { VInfiniteScroll } from '../VInfiniteScroll'
 
 describe('VInfiniteScroll', () => {
-  // TODO: Only reproducing in ci
-  it.skip('should call load function when scrolled', () => {
+  it('should call load function when scrolled', () => {
     const load = cy.spy().as('load')
     const items = createRange(50)
 

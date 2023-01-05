@@ -252,23 +252,29 @@ export const VSelect = genericComponent<new <
 
                     { slots['prepend-item']?.() }
 
-                    { items.value.map((item, index) => slots.item?.({
-                      item,
-                      index,
-                      props: mergeProps(item.props, { onClick: () => select(item) }),
-                    }) ?? (
-                      <VListItem
-                        key={ index }
-                        { ...item.props }
-                        onClick={ () => select(item) }
-                      >
-                        {{
-                          prepend: ({ isSelected }) => props.multiple && !props.hideSelected ? (
-                            <VCheckboxBtn modelValue={ isSelected } ripple={ false } />
-                          ) : undefined,
-                        }}
-                      </VListItem>
-                    )) }
+                    { items.value.map((item, index) => {
+                      if (slots.item) {
+                        return slots.item?.({
+                          item,
+                          index,
+                          props: mergeProps(item.props, { onClick: () => select(item) }),
+                        })
+                      }
+
+                      return (
+                        <VListItem
+                          key={ index }
+                          { ...item.props }
+                          onClick={ () => select(item) }
+                        >
+                          {{
+                            prepend: ({ isSelected }) => props.multiple && !props.hideSelected ? (
+                              <VCheckboxBtn modelValue={ isSelected } ripple={ false } />
+                            ) : undefined,
+                          }}
+                        </VListItem>
+                      )
+                    })}
 
                     { slots['append-item']?.() }
                   </VList>
