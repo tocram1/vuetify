@@ -70,6 +70,8 @@ export const VBtn = genericComponent<VBtnSlots>()({
       default: true,
     },
 
+    text: String,
+
     ...makeBorderProps(),
     ...makeRoundedProps(),
     ...makeDensityProps(),
@@ -214,9 +216,9 @@ export const VBtn = genericComponent<VBtnSlots>()({
               }}
             >
               { slots.default?.() ?? (
-                hasIcon && (
-                  <VIcon key="icon" />
-                )
+                hasIcon
+                  ? (<VIcon key="icon" />)
+                  : props.text
               ) }
             </VDefaultsProvider>
           </span>
