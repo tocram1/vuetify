@@ -11,7 +11,7 @@
     "striped": "Adds a stripe background to the filled portion of the progress component",
     "top": "Aligns the content towards the top",
     "clickable": "MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree/master/packages/api-generator/src/locale/en/v-progress-linear.json))",
-    "height": "MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree/master/packages/api-generator/src/locale/en/v-progress-linear.json))",
+    "height": "Height of the progress bar (in pixels)",
     "max": "MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree/master/packages/api-generator/src/locale/en/v-progress-linear.json))",
     "roundedBar": "MISSING DESCRIPTION ([edit in github](https://github.com/vuetifyjs/vuetify/tree/master/packages/api-generator/src/locale/en/v-progress-linear.json))"
   },
